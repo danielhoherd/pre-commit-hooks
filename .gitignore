@@ -1,0 +1,14 @@
+*.autosave
+*.bak
+*.crt
+*.key
+*.log
+*.pyc
+*.svn
+*.sw?
+*.tmp
+*~
+.DS_Store
+.idea
+build
+dist
