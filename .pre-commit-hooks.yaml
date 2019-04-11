@@ -22,3 +22,9 @@
   language: system
   entry: perl -pi* -e 's/\xe2\x80\x93/-/g && ($t = 1) && print STDERR $_; END{{exit $t}}'
   exclude_types: [binary]
+
+- id: sort-gitignore
+  name: Sort contents of .gitignore
+  language: system
+  entry: "sort -u -o .gitignore .gitignore"
+  files: '.gitignore'
