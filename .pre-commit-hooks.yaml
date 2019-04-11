@@ -25,6 +25,6 @@
 
 - id: sort-gitignore
   name: Sort contents of .gitignore
-  language: system
-  entry: "sort -u -o .gitignore .gitignore"
+  language: script
+  entry: "scripts/sort.sh -u -o .gitignore .gitignore"
   files: '.gitignore'
