@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 export LC_ALL=C
 
-sort "${@}"
+for FILE in "${@}" ; do
+  sort -u -o "${FILE}" "${FILE}"
+done
