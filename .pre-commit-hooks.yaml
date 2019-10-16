@@ -28,3 +28,9 @@
   language: script
   entry: "scripts/sort.sh"
   files: '.gitignore'
+
+- id: sort-ansible-requirements-yml
+  name: sort ansible requirements.yml files
+  entry: scripts/sort-ansible-requirements-yml.py
+  language: script
+  files: '(^|\/)requirements\.ya?ml$'

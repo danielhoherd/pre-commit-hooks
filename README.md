@@ -15,6 +15,8 @@ This is a collection of hooks that I use quite broadly.
           - id: remove-unicode-non-breaking-spaces
           - id: remove-unicode-zero-width-non-breaking-spaces
           - id: remove-en-dashes
+          - id: sort-gitignore
+          - id: sort-ansible-requirements-yml
     ```
 2. `pre-commit install`
 3. `pre-commit run --all-files`
