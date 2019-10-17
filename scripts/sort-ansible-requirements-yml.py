@@ -26,7 +26,7 @@ def main(argv=None):
         with open(filename, "r+") as f:
             input_yaml = yaml.safe_load(f)
             output_yaml = sort_yaml(input_yaml)
-            if input_yaml != output_yaml:
+            if yaml.safe_dump(input_yaml) != output_yaml:
                 print(f"Sorting contents of {filename}")
                 f.seek(0)
                 f.write("---\n" + output_yaml)
