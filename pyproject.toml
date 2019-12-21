@@ -1,0 +1,6 @@
+# https://github.com/psf/black#configuration-format
+[tool.black]
+line-length = 132
+target-version = ['py36', 'py37', 'py38']
+include = '\.pyi?$'
+exclude = '(venv|.vscode)'

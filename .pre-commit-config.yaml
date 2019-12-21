@@ -1,12 +1,13 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
       - id: check-byte-order-marker
       - id: check-case-conflict
       - id: check-json
       - id: check-merge-conflict
+      - id: check-toml
       - id: check-xml
       - id: check-yaml
         args: ['--allow-multiple-documents']
@@ -14,7 +15,7 @@ repos:
       - id: end-of-file-fixer
       - id: flake8
       - id: mixed-line-ending
-        args: ['--fix=lf' ]
+        args: ['--fix=lf']
       - id: requirements-txt-fixer
       - id: sort-simple-yaml
       - id: trailing-whitespace
@@ -22,8 +23,8 @@ repos:
     rev: 1.0.5
     hooks:
       - id: shell-lint
-  - repo: https://github.com/ambv/black
-    rev: 19.3b0
+  - repo: https://github.com/psf/black
+    rev: 19.10b0
     hooks:
       - id: black
         args: ['-l', '132']
@@ -33,13 +34,14 @@ repos:
       - id: remove-tabs
         exclude_types: [makefile, binary]
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.18.0
+    rev: v1.19.0
     hooks:
       - id: yamllint
   - repo: https://github.com/danielhoherd/pre-commit-hooks
-    rev: 0b84f996d085b772bcdb94279ebcddc827a2fd57
+    rev: 1a8d3b95b329e8aecd81ce0620a220f4053b46f0
     hooks:
       - id: CVE-2017-18342
+      - id: remove-en-dashes
       - id: remove-unicode-non-breaking-spaces
       - id: remove-unicode-zero-width-non-breaking-spaces
-      - id: remove-en-dashes
+      - id: sort-gitignore
