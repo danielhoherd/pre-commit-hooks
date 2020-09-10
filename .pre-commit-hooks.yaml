@@ -11,6 +11,12 @@
   entry: perl -pi* -e 's/\xc2\xa0/ /g && ($t = 1) && print STDERR $_; END{{exit $t}}'
   exclude_types: [binary]
 
+- id: remove-unicode-zero-width-space
+  name: Remove unicode zero width space character U+200B
+  language: system
+  entry: perl -pi -e 's/\xe2\x80\x8b//g && ($t = 1) && print STDERR $_; END{{exit $t}}'
+  exclude_types: [binary]
+
 - id: remove-unicode-zero-width-non-breaking-spaces
   name: Remove unicode zero width non-breaking space character U+FEFF
   language: system
