@@ -1,51 +1,48 @@
 ---
+exclude: '(venv|.vscode)'  # regex
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
     hooks:
-      - id: check-byte-order-marker
       - id: check-case-conflict
+      - id: check-executables-have-shebangs
       - id: check-json
       - id: check-merge-conflict
       - id: check-toml
       - id: check-xml
       - id: check-yaml
         args: ['--allow-multiple-documents']
-      - id: debug-statements
+      - id: detect-private-key
       - id: end-of-file-fixer
+      - id: file-contents-sorter
+        files: .gitignore
       - id: mixed-line-ending
         args: ['--fix=lf']
-      - id: requirements-txt-fixer
+      - id: no-commit-to-branch
+        args: ['-b', 'master']
+      - id: pretty-format-json
+        args: ['--autofix', '--no-ensure-ascii']
       - id: sort-simple-yaml
       - id: trailing-whitespace
   - repo: https://github.com/detailyang/pre-commit-shell
     rev: 1.0.5
     hooks:
       - id: shell-lint
-  - repo: https://github.com/psf/black
-    rev: 20.8b1
-    hooks:
-      - id: black
-        args: ['-l', '132']
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.3
-    hooks:
-      - id: flake8
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.1.9
     hooks:
       - id: remove-tabs
         exclude_types: [makefile, binary]
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.24.2
+    rev: v1.25.0
     hooks:
       - id: yamllint
   - repo: https://github.com/danielhoherd/pre-commit-hooks
-    rev: 07f5a00b0f7d7856d602baf5e530a4d4472d7bf3
+    rev: ac0637d7febb88d1b01f876e47bb5224a9a63eae
     hooks:
       - id: CVE-2017-18342
-      - id: remove-unicode-zero-width-space
       - id: remove-en-dashes
+        exclude: do-updates-and-reboot.sh
       - id: remove-unicode-non-breaking-spaces
       - id: remove-unicode-zero-width-non-breaking-spaces
-      - id: sort-gitignore
+      - id: remove-unicode-zero-width-space
