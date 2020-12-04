@@ -33,7 +33,7 @@
   name: Sort contents of .gitignore
   language: script
   entry: "scripts/sort.sh"
-  files: '.gitignore'
+  files: ".gitignore"
 
 - id: sort-ansible-requirements-yml
   name: sort ansible requirements.yml files
