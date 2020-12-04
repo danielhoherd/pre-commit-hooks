@@ -1,8 +1,13 @@
 ---
-exclude: '(venv|.vscode)'  # regex
+exclude: "(venv|\\.vscode)" # regex
 repos:
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v2.2.1"
+    hooks:
+      - id: prettier
+        args: ["--print-width=135"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.3.0
     hooks:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
@@ -11,17 +16,17 @@ repos:
       - id: check-toml
       - id: check-xml
       - id: check-yaml
-        args: ['--allow-multiple-documents']
+        args: ["--allow-multiple-documents"]
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: file-contents-sorter
         files: .gitignore
       - id: mixed-line-ending
-        args: ['--fix=lf']
+        args: ["--fix=lf"]
       - id: no-commit-to-branch
-        args: ['-b', 'master']
+        args: ["-b", "master"]
       - id: pretty-format-json
-        args: ['--autofix', '--no-ensure-ascii']
+        args: ["--autofix", "--no-ensure-ascii"]
       - id: sort-simple-yaml
       - id: trailing-whitespace
   - repo: https://github.com/detailyang/pre-commit-shell
@@ -38,7 +43,7 @@ repos:
     hooks:
       - id: yamllint
   - repo: https://github.com/danielhoherd/pre-commit-hooks
-    rev: ac0637d7febb88d1b01f876e47bb5224a9a63eae
+    rev: fdcede7a5c8ea762c903f242279112161cf35d9f
     hooks:
       - id: CVE-2017-18342
       - id: remove-en-dashes
