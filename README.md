@@ -27,4 +27,4 @@ This is a collection of hooks that I use quite broadly.
 
 # License
 
-pre-commit-hooks licensed under the [Unlicense](https://unlicense.org/) license.
+pre-commit-hooks licensed under the [MIT License](LICENSE).
