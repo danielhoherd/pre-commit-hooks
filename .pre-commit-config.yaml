@@ -1,32 +1,32 @@
 ---
-exclude: "(venv|\\.vscode)" # regex
+exclude: '^(venv|\.vscode)' # regex
 repos:
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.0.0
+    hooks:
+      - id: codespell
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: "v2.2.1"
     hooks:
       - id: prettier
         args: ["--print-width=135"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.3.0
+    rev: v3.4.0
     hooks:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
-      - id: check-json
       - id: check-merge-conflict
-      - id: check-toml
-      - id: check-xml
       - id: check-yaml
         args: ["--allow-multiple-documents"]
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: file-contents-sorter
-        files: .gitignore
+        args: ["--ignore-case", "--unique"]
+        files: '^\.gitignore$'
       - id: mixed-line-ending
         args: ["--fix=lf"]
       - id: no-commit-to-branch
         args: ["-b", "master"]
-      - id: pretty-format-json
-        args: ["--autofix", "--no-ensure-ascii"]
       - id: sort-simple-yaml
       - id: trailing-whitespace
   - repo: https://github.com/detailyang/pre-commit-shell
@@ -39,15 +39,14 @@ repos:
       - id: remove-tabs
         exclude_types: [makefile, binary]
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.25.0
+    rev: v1.26.0
     hooks:
       - id: yamllint
   - repo: https://github.com/danielhoherd/pre-commit-hooks
-    rev: fdcede7a5c8ea762c903f242279112161cf35d9f
+    rev: bd325c947efcba13c03b4f4c93d882f2f83ed6ff
     hooks:
       - id: CVE-2017-18342
       - id: remove-en-dashes
-        exclude: do-updates-and-reboot.sh
       - id: remove-unicode-non-breaking-spaces
       - id: remove-unicode-zero-width-non-breaking-spaces
       - id: remove-unicode-zero-width-space
