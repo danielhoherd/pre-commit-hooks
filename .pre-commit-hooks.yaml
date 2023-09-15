@@ -5,12 +5,6 @@
   language: pygrep
   files: '\.py$'
 
-- id: remove-unicode-non-breaking-spaces
-  name: Remove unicode non-breaking space character U+00A0
-  language: system
-  entry: perl -pi* -e 's/\xc2\xa0/ /g && ($t = 1) && print STDERR $_; END{{exit $t}}'
-  exclude_types: [binary]
-
 - id: remove-unicode-zero-width-space
   name: Remove unicode zero width space character U+200B
   language: system
@@ -23,20 +17,49 @@
   entry: perl -pi* -e 's/\xef\xbb\xbf//g && ($t = 1) && print STDERR $_; END{{exit $t}}'
   exclude_types: [binary]
 
-- id: remove-en-dashes
-  name: Remove the unicode character U+2013 (en dash)
+- id: replace-unicode-non-breaking-spaces
+  name: Replace the unicode character U+00A0 (non-breaking space) with a normal space
+  language: system
+  entry: perl -pi* -e 's/\xc2\xa0/ /g && ($t = 1) && print STDERR $_; END{{exit $t}}'
+  exclude_types: [binary]
+
+- id: replace-greek-question-mark
+  name: Replace the unicode character U+003B (Greek question mark) with a semicolon
+  language: system
+  entry: perl -pi* -e 's/\xcd\xbe/;/g && ($t = 1) && print STDERR $_; END{{exit $t}}'
+  exclude_types: [binary]
+
+- id: replace-en-dashes
+  name: Replace the unicode character U+2013 (en dash) with a normal dash
   language: system
   entry: perl -pi* -e 's/\xe2\x80\x93/-/g && ($t = 1) && print STDERR $_; END{{exit $t}}'
   exclude_types: [binary]
-
-- id: sort-gitignore
-  name: Sort contents of .gitignore
-  language: script
-  entry: "scripts/sort.sh"
-  files: ".gitignore"
 
 - id: sort-ansible-requirements-yml
   name: sort ansible requirements.yml files
   entry: scripts/sort-ansible-requirements-yml.py
   language: script
   files: '(^|\/)requirements\.ya?ml$'
+
+# Deprecated hooks are listed below
+
+- id: remove-unicode-non-breaking-spaces
+  name: Remove unicode non-breaking space character U+00A0
+  language: script
+  always_run: True
+  pass_filenames: False
+  entry: "scripts/remove-unicode-non-breaking-spaces.sh"
+
+- id: remove-en-dashes
+  name: Remove the unicode character U+2013 (en dash)
+  language: script
+  always_run: True
+  pass_filenames: False
+  entry: "scripts/remove-en-dashes.sh"
+
+- id: sort-gitignore
+  name: Sort contents of .gitignore
+  language: script
+  always_run: True
+  pass_filenames: False
+  entry: "scripts/sort-gitignore.sh"
