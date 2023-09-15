@@ -43,12 +43,12 @@ repos:
     hooks:
       - id: yamllint
   - repo: https://github.com/danielhoherd/pre-commit-hooks
-    rev: 65ea059268676338855129ec6c36b3e981d621da
+    rev: adaa5f76387c02c41c346a183c1ca292ced9512a
     hooks:
       - id: CVE-2017-18342
       - id: remove-unicode-zero-width-non-breaking-spaces
       - id: remove-unicode-zero-width-space
-      # - id: replace-en-dashes
-      # - id: replace-greek-question-mark
-      # - id: replace-unicode-non-breaking-spaces
+      - id: replace-en-dashes
+      - id: replace-greek-question-mark
+      - id: replace-unicode-non-breaking-spaces
       - id: sort-ansible-requirements-yml
