@@ -12,6 +12,7 @@ This is a collection of hooks that I use quite broadly.
        rev: master
        hooks:
          - id: CVE-2017-18342
+         - id: remove-unicode-left-to-right-mark
          - id: remove-unicode-zero-width-non-breaking-spaces
          - id: remove-unicode-zero-width-space
          - id: replace-en-dashes
