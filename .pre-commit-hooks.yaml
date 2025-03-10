@@ -2,7 +2,7 @@
 - id: update-docker-env-statements # Make Dockerfile ENV vars conform to ENV key=val syntax
   name: Disallow pyyaml.load
   language: system
-  entry: bin/update_docker_env_statements.py
+  entry: python bin/update_docker_env_statements.py
   files: '\.py$'
 
 - id: CVE-2017-18342 # https://msg.pyyaml.org/load
