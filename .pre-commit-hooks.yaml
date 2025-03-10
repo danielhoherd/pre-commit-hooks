@@ -75,5 +75,5 @@
   language: script
   always_run: True
   pass_filenames: True
-  entry: python bin/update_docker_env_statements.py
+  entry: bin/update_docker_env_statements.py
   files: "Dockerfile"
