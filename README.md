@@ -19,6 +19,7 @@ This is a collection of hooks that I use quite broadly.
          - id: replace-greek-question-mark
          - id: replace-unicode-non-breaking-spaces
          - id: sort-ansible-requirements-yml
+         - id: update-docker-env-statements
    ```
 2. `pre-commit install`
 3. `pre-commit run --all-files`

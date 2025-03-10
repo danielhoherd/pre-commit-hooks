@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-# Sorts Ansible requirements.yml files
+"""Sort Ansible requirements.yml files"""
 # https://galaxy.ansible.com/docs/using/installing.html
 
-import sys
-import yaml
 import argparse
+import sys
+
+import yaml
 
 
 def sort_data(data):
@@ -43,6 +44,6 @@ def main(argv=None):
 
 if __name__ == "__main__":
     try:
-        exit(main())
+        sys.exit(main())
     except KeyboardInterrupt:
         sys.exit(1)
