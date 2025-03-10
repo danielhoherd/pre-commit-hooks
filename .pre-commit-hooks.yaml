@@ -1,7 +1,7 @@
 ---
 - id: update-docker-env-statements # Make Dockerfile ENV vars conform to ENV key=val syntax
   name: Disallow pyyaml.load
-  language: system
+  language: python
   entry: bin/update_docker_env_statements.py
   files: '\.py$'
 
