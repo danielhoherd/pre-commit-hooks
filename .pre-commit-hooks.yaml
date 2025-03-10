@@ -1,4 +1,10 @@
 ---
+- id: update-docker-env-statements # Make Dockerfile ENV vars conform to ENV key=val syntax
+  name: Disallow pyyaml.load
+  language: system
+  entry: bin/update_docker_env_statements.py
+  files: '\.py$'
+
 - id: CVE-2017-18342 # https://msg.pyyaml.org/load
   name: Disallow pyyaml.load
   entry: '\b(py)?yaml.load\b'
@@ -54,18 +60,18 @@
   language: script
   always_run: True
   pass_filenames: False
-  entry: "bin/remove-unicode-non-breaking-spaces.sh"
+  entry: bin/remove-unicode-non-breaking-spaces.sh
 
 - id: remove-en-dashes
   name: Remove the unicode character U+2013 (en dash)
   language: script
   always_run: True
   pass_filenames: False
-  entry: "bin/remove-en-dashes.sh"
+  entry: bin/remove-en-dashes.sh
 
 - id: sort-gitignore
   name: Sort contents of .gitignore
   language: script
   always_run: True
   pass_filenames: False
-  entry: "bin/sort-gitignore.sh"
+  entry: bin/sort-gitignore.sh
