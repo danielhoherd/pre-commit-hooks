@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
+import argparse
 import re
-import sys
 
 
 def fix_dockerfile_line(line):
@@ -11,7 +11,11 @@ def fix_dockerfile_line(line):
 
 
 def main():
-    for filename in sys.argv[1:]:
+    parser = argparse.ArgumentParser(description="Make Dockerfile ENV vars conform to ENV key=val syntax.")
+    parser.add_argument("filenames", nargs="+", help="Dockerfile(s) to process")
+    args = parser.parse_args()
+
+    for filename in args.filenames:
         with open(filename) as file:
             lines = file.readlines()
 
