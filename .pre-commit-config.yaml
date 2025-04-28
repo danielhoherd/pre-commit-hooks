@@ -2,7 +2,7 @@
 exclude: '^(venv|\.vscode)' # regex
 repos:
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
+    rev: v2.4.1
     hooks:
       - id: codespell
   - repo: https://github.com/pre-commit/mirrors-prettier
@@ -11,7 +11,7 @@ repos:
       - id: prettier
         args: ["--print-width=135"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
@@ -39,11 +39,11 @@ repos:
       - id: remove-tabs
         exclude_types: [makefile, binary]
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.35.1
+    rev: v1.37.0
     hooks:
       - id: yamllint
   - repo: https://github.com/danielhoherd/pre-commit-hooks
-    rev: 8b2d969bd549cd7c9454cc8bb54eec5b35c2e5e6
+    rev: 976b58ba36fcd3313fed6d5a7abc228cec64f994
     hooks:
       - id: CVE-2017-18342
       - id: remove-unicode-zero-width-non-breaking-spaces

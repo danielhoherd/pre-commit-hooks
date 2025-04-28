@@ -47,6 +47,13 @@
   language: script
   files: '(^|\/)requirements\.ya?ml$'
 
+- id: forbid-whitespace-in-filenames
+  name: Forbid having any whitespace in a filename
+  language: script
+  always_run: True
+  pass_filenames: False
+  entry: "scripts/forbid-whitespace-in-filenames.sh"
+
 # Deprecated hooks are listed below
 
 - id: remove-unicode-non-breaking-spaces
