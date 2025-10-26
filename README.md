@@ -1,3 +1,5 @@
+ARCHIVAL NOTICE: the github repository for this project has been archived. Development continues at <https://gitlab.com/danielhoherd/pre-commit-hooks>
+
 # pre-commit-hooks
 
 This is a collection of hooks that I use quite broadly.
